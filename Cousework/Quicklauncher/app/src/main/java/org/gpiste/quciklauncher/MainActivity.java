@@ -1,6 +1,7 @@
 package org.gpiste.quciklauncher;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -18,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
 
-        //Find buttons using theit ID
+        //Find buttons using theie ID
         secActivityButton = findViewById(R.id.secActivityButton);
         googloButton = findViewById(R.id.googloButton);
 
@@ -29,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
 
                 Intent intent = new Intent(MainActivity.this, SeccondActivity.class); //Request to go from main to sec activity
-                intent.putExtra("org.gpiste.quciklauncher.SOMETHING", "WELCOME TO NEW ACTIVITY");//Sending message to thr seccond activity
+                intent.putExtra("org.gpiste.quciklauncher.SOMETHING", "WELCOME TO NEW ACTIVITY");//Sending message to thr second activity
                 startActivity(intent);
             }
         });
@@ -37,6 +38,14 @@ public class MainActivity extends AppCompatActivity {
         googloButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                //Parsing string to URI for Intent
+                String website = "https://www.youtube.com";
+                Uri uri = Uri.parse(website);
+
+                //Send request to go to website
+                Intent webIntent = new Intent(Intent.ACTION_VIEW, uri);
+                startActivity(webIntent);
 
             }
         });
