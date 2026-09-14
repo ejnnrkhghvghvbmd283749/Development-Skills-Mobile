@@ -1,5 +1,6 @@
 package org.gpiste.quciklauncher;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -27,6 +28,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
+                Intent intent = new Intent(MainActivity.this, SeccondActivity.class); //Request to go from main to sec activity
+                intent.putExtra("org.gpiste.quciklauncher.SOMETHING", "WELCOME TO NEW ACTIVITY");//Sending message to thr seccond activity
+                startActivity(intent);
             }
         });
 
