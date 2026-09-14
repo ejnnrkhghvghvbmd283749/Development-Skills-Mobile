@@ -19,10 +19,14 @@ public class SeccondActivity extends AppCompatActivity {
         //Find textview element by id
         receivedTextView = findViewById(R.id.receivedTextView);
 
-        //Receiving the message and setting it to textview
-        String text = getIntent().getExtras().getString("org.gpiste.quciklauncher.SOMETHING");
-        receivedTextView.setText(text);
-
+        //If a message, It shows it in textbox other than that NULL
+        if(getIntent().hasExtra("org.gpiste.quciklauncher.SOMETHING")){
+            //Receiving the message and setting it to textview
+            String text = getIntent().getExtras().getString("org.gpiste.quciklauncher.SOMETHING");
+            receivedTextView.setText(text);
+        }else{
+            receivedTextView.setText("NULL");
+        }
 
     }
 }

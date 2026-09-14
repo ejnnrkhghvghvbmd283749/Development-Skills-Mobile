@@ -5,6 +5,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,6 +14,8 @@ public class MainActivity extends AppCompatActivity {
 
     Button secActivityButton;
     Button googloButton;
+
+    TextView messageTextEdit;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,15 +25,20 @@ public class MainActivity extends AppCompatActivity {
         //Find buttons using theie ID
         secActivityButton = findViewById(R.id.secActivityButton);
         googloButton = findViewById(R.id.googloButton);
+        messageTextEdit = findViewById(R.id.messageTextEdit);
 
         //Adding clicklisteners for when the buttons are clicked
-
         secActivityButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
+                String message = messageTextEdit.getText().toString();
                 Intent intent = new Intent(MainActivity.this, SeccondActivity.class); //Request to go from main to sec activity
-                intent.putExtra("org.gpiste.quciklauncher.SOMETHING", "WELCOME TO NEW ACTIVITY");//Sending message to thr second activity
+
+                //Send the message from textbox
+                if(!message.isEmpty()) {
+                    intent.putExtra("org.gpiste.quciklauncher.SOMETHING", message);//Sending message to thr second activity
+                }
                 startActivity(intent);
             }
         });
