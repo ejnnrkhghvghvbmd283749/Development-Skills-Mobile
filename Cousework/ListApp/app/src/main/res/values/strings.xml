@@ -1,3 +1,27 @@
 <resources>
     <string name="app_name">List App</string>
+    
+    <string-array name="products">
+        <item>blender</item>
+        <item>iphone</item>
+        <item>xbox720</item>
+    </string-array>
+
+    <string-array name="description">
+        <item>Blender made in Germany</item>
+        <item>Iphone made in china</item>
+        <item>Console made in california</item>
+    </string-array>
+
+    <string-array name="prices">
+        <item>$100.99</item>
+        <item>$150.25</item>
+        <item>$299.59</item>
+    </string-array>
+
+    <string-array name="availability">
+        <item>3</item>
+        <item>8</item>
+        <item>5</item>
+    </string-array>
 </resources>

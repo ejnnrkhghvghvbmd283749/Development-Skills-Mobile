@@ -4,13 +4,13 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/namwTextView"
+        android:id="@+id/nameTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="22dp"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="31dp"
         android:text="Name"
         android:textSize="25sp" />
 
@@ -18,11 +18,12 @@
         android:id="@+id/descriptTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/namwTextView"
+        android:layout_below="@+id/nameTextView"
         android:layout_alignParentStart="true"
-        android:layout_marginStart="27dp"
-        android:layout_marginTop="18dp"
-        android:text="Description" />
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="9dp"
+        android:text="Description"
+        android:textSize="12sp" />
 
     <TextView
         android:id="@+id/priceTextView"
@@ -30,10 +31,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginStart="230dp"
-        android:layout_marginTop="26dp"
-        android:layout_marginEnd="40dp"
-        android:layout_toEndOf="@+id/namwTextView"
+        android:layout_marginTop="33dp"
+        android:layout_marginEnd="34dp"
         android:text="Price"
         android:textSize="20sp" />
 
@@ -43,10 +42,8 @@
         android:layout_height="16dp"
         android:layout_below="@+id/priceTextView"
         android:layout_alignParentEnd="true"
-        android:layout_marginStart="225dp"
-        android:layout_marginTop="18dp"
-        android:layout_marginEnd="38dp"
-        android:layout_toEndOf="@+id/descriptTextView"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="24dp"
         android:text="Availability"
-        android:textSize="10sp" />
+        android:textSize="12sp" />
 </RelativeLayout>
