@@ -13,7 +13,7 @@ import android.content.res.Resources;
 public class MainActivity extends AppCompatActivity {
 
     ListView mainList;
-    String[] products;
+    static String[] products;
     String[] descriptions;
     String[] prices;
     String[] availability;
