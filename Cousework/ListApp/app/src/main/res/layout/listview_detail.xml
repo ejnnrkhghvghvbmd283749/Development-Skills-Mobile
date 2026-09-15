@@ -3,4 +3,50 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <TextView
+        android:id="@+id/namwTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="22dp"
+        android:text="Name"
+        android:textSize="25sp" />
+
+    <TextView
+        android:id="@+id/descriptTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/namwTextView"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="27dp"
+        android:layout_marginTop="18dp"
+        android:text="Description" />
+
+    <TextView
+        android:id="@+id/priceTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="230dp"
+        android:layout_marginTop="26dp"
+        android:layout_marginEnd="40dp"
+        android:layout_toEndOf="@+id/namwTextView"
+        android:text="Price"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/availabilityTextView"
+        android:layout_width="50dp"
+        android:layout_height="16dp"
+        android:layout_below="@+id/priceTextView"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="225dp"
+        android:layout_marginTop="18dp"
+        android:layout_marginEnd="38dp"
+        android:layout_toEndOf="@+id/descriptTextView"
+        android:text="Availability"
+        android:textSize="10sp" />
 </RelativeLayout>
