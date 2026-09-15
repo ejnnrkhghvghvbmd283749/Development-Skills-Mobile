@@ -1,6 +1,10 @@
 package org.gpiste.listapp;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ListView;
 
 import androidx.activity.EdgeToEdge;
@@ -30,13 +34,20 @@ public class MainActivity extends AppCompatActivity {
         //Find listview by id for setting elements to it
         mainList = findViewById(R.id.mainList);
 
+
         //Pass arrays to adapter class
         ProductAdapter productAdapter = new ProductAdapter(this, products, descriptions, prices, availability);
         //Setting received view to the list in mainactivity
         mainList.setAdapter(productAdapter);
 
-
-
+        mainList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Intent intent = new Intent(MainActivity.this, PhotoDetailActivity.class);//Move from main to photodetailactivity
+                intent.putExtra("org.gpiste.listapp", i);//Send clicked items index to the activity
+                startActivity(intent);
+            }
+        });
         }
 
 }
