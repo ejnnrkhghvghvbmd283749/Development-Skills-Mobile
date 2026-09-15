@@ -30,6 +30,12 @@ public class MainActivity extends AppCompatActivity {
         //Find listview by id for setting elements to it
         mainList = findViewById(R.id.mainList);
 
+        //Pass arrays to adapter class
+        ProductAdapter productAdapter = new ProductAdapter(this, products, descriptions, prices, availability);
+        //Setting received view to the list in mainactivity
+        mainList.setAdapter(productAdapter);
+
+
 
         }
 

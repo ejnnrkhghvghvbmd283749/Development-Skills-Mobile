@@ -7,7 +7,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
-public class productAdapter extends BaseAdapter {
+public class ProductAdapter extends BaseAdapter {
 
     String[] products;
     String[] descriptions;
@@ -15,7 +15,7 @@ public class productAdapter extends BaseAdapter {
     String[] availability;
 
     LayoutInflater inflater;
-    public productAdapter(Context c, String[] p, String[] d, String[] ps, String[] a){
+    public ProductAdapter(Context c, String[] p, String[] d, String[] ps, String[] a){
 
         inflater= (LayoutInflater)c.getSystemService(Context.LAYOUT_INFLATER_SERVICE); //Request to get a tool to inflate XML file to view
         products = p;
