@@ -43,7 +43,7 @@
         android:layout_below="@+id/priceTextView"
         android:layout_alignParentEnd="true"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="24dp"
+        android:layout_marginEnd="29dp"
         android:text="Availability"
         android:textSize="12sp" />
 </RelativeLayout>
