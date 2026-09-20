@@ -10,7 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button signUpButton;
+    Button createAccountButton;
     Button loginInButton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,11 +19,11 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         //Finding elements by their ids
-        signUpButton = findViewById(R.id.createAccountButton);
+        createAccountButton = findViewById(R.id.createAccountButton);
         loginInButton = findViewById(R.id.logInButton);
 
         //When button is clicked, it goes to sign up page
-        signUpButton.setOnClickListener(new View.OnClickListener() {
+        createAccountButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, SignUpActivity.class);
