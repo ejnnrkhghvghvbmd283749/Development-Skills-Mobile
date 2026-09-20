@@ -1,17 +1,21 @@
 package org.gpiste.myapp;
+
+import java.util.HashMap;
+
 public class User {
 
     String firstname;
     String lastname;
-    String email;
     String username;
     String password;
 
+    //Static hashmap to access across activities and classes
+    static HashMap<String, User> users = new HashMap<>();
+
     //Constructor
-    public User(String f, String l, String e, String u, String p) {
+    public User(String f, String l, String u, String p) {
         firstname = f;
         lastname = l;
-        email = e;
         username = u;
         password = p;
     }

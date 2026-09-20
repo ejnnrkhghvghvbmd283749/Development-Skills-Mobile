@@ -16,8 +16,6 @@ public class SignUpActivity extends AppCompatActivity {
     TextView passwordText;
     Button signUpButton;
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,9 +31,24 @@ public class SignUpActivity extends AppCompatActivity {
 
         signUpButton = findViewById(R.id.signUpButton);
 
+        //When button is clicked, user's data gets saved
         signUpButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                //Converting inputs to strings
+                String name = fistNameText.getText().toString();
+                String lastname = lastNameText.getText().toString();
+                String email = emailText.getText().toString();
+                String username = userNameText.getText().toString();
+                String password = passwordText.getText().toString();
+
+                //Create an object out of inputs
+                User user = new User(name, lastname, username, password);
+
+                //Put email as key and object as value into hashmap
+                User.users.put(email, user);
+                System.out.println(User.users);
 
             }
         });
