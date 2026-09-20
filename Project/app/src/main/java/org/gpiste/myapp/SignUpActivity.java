@@ -2,7 +2,6 @@ package org.gpiste.myapp;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -33,28 +32,25 @@ public class SignUpActivity extends AppCompatActivity {
         signUpButton = findViewById(R.id.signUpButton);
 
         //When button is clicked, user's data gets saved
-        signUpButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+        signUpButton.setOnClickListener(view -> {
 
-                //Converting inputs to strings
-                String name = fistNameText.getText().toString();
-                String lastname = lastNameText.getText().toString();
-                String email = emailText.getText().toString();
-                String username = userNameText.getText().toString();
-                String password = passwordText.getText().toString();
+            //Converting inputs to strings
+            String name = fistNameText.getText().toString();
+            String lastname = lastNameText.getText().toString();
+            String email = emailText.getText().toString();
+            String username = userNameText.getText().toString();
+            String password = passwordText.getText().toString();
 
-                //Create an object out of inputs
-                User user = new User(name, lastname, username, password);
+            //Create an object out of inputs
+            User user = new User(name, lastname, username, password);
 
-                //Put email as key and object as value into hashmap
-                User.users.put(email, user);
+            //Put email as key and object as value into hashmap
+            User.users.put(email, user);
 
-                //Proceed to main activity to login in
-                Intent intent = new Intent(SignUpActivity.this, MainActivity.class);
-                startActivity(intent);
+            //Proceed to main activity to login in
+            Intent intent = new Intent(SignUpActivity.this, MainActivity.class);
+            startActivity(intent);
 
-            }
         });
 
     }

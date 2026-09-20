@@ -2,7 +2,6 @@ package org.gpiste.myapp;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 
 import androidx.activity.EdgeToEdge;
@@ -23,20 +22,16 @@ public class MainActivity extends AppCompatActivity {
         loginInButton = findViewById(R.id.logInButton);
 
         //When button is clicked, it goes to sign up page
-        createAccountButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, SignUpActivity.class);
-                startActivity(intent);
+        createAccountButton.setOnClickListener(view -> {
+            Intent intent = new Intent(MainActivity.this, SignUpActivity.class);
+            startActivity(intent);
 
-            }
         });
 
-        loginInButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-            }
+        //When button is clicked, it goes to login page
+        loginInButton.setOnClickListener(view -> {
+            Intent intent = new Intent(MainActivity.this, LoginInActivity.class);
+            startActivity(intent);
         });
     }
 }
