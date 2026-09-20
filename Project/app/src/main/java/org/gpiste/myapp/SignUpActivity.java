@@ -7,18 +7,16 @@ import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 public class SignUpActivity extends AppCompatActivity {
-
     TextView fistNameText;
     TextView lastNameText;
     TextView emailText;
     TextView userNameText;
     TextView passwordText;
     Button signUpButton;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
