@@ -1,5 +1,6 @@
 package org.gpiste.myapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -48,7 +49,10 @@ public class SignUpActivity extends AppCompatActivity {
 
                 //Put email as key and object as value into hashmap
                 User.users.put(email, user);
-                System.out.println(User.users);
+
+                //Proceed to main activity to login in
+                Intent intent = new Intent(SignUpActivity.this, MainActivity.class);
+                startActivity(intent);
 
             }
         });
