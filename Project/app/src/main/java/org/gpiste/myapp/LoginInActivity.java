@@ -34,9 +34,9 @@ public class LoginInActivity extends AppCompatActivity {
             String email = loginEmailText.getText().toString();
             String password = passwordLoginText.getText().toString();
 
-            //Checks users existence, if so it proceed to ToDoTask activity
+            //Checks users existence, if so it proceed to HomePage activity
             if(User.users.containsKey(email) && User.users.get(email).password.equals(password)){
-                Intent intent = new Intent(LoginInActivity.this, ToDoTaskActivity.class);
+                Intent intent = new Intent(LoginInActivity.this, HomePageActivity.class);
                 startActivity(intent);
             }else if(User.users.containsKey(email) && !User.users.get(email).password.equals(password)){
                 Toast.makeText(LoginInActivity.this, "Password is incorrect, try again",Toast.LENGTH_SHORT).show();
