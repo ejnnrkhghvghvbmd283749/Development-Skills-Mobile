@@ -36,12 +36,19 @@ public class ToDoTaskActivity extends AppCompatActivity {
                 //Get task name
                 String taskName = taskNameText.getText().toString();
 
-                //Get selected radiobutton by ID from radiogroup
+                //Get the selected radiobutton and its text by ID from radiogroup
                 int radioId = radioGroup.getCheckedRadioButtonId();
                 radioButton = findViewById(radioId);
+                String priority = radioButton.getText().toString();
 
                 //Get the task note
                 String note = noteText.getText().toString();
+
+                //Create task object
+                Task task = new Task(taskName, priority, note);
+
+                //Add task object to list
+                Task.tasks.add(task);
             }
         });
 
