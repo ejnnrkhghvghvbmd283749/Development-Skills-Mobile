@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 public class ToDoTaskActivity extends AppCompatActivity {
 
@@ -17,6 +18,7 @@ public class ToDoTaskActivity extends AppCompatActivity {
     TextView noteText;
     Button saveButton;
     RadioButton radioButton;
+    Toolbar taskPageToolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +31,15 @@ public class ToDoTaskActivity extends AppCompatActivity {
         radioGroup = findViewById(R.id.radioGroup);
         noteText = findViewById(R.id.noteText);
         saveButton = findViewById(R.id.saveButton);
+        taskPageToolbar = findViewById(R.id.taskPageToolbar);
+
+        //When navigation icon is clicked it goes back to previous activity
+        taskPageToolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
 
         saveButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -51,7 +62,6 @@ public class ToDoTaskActivity extends AppCompatActivity {
                 Task.tasks.add(task);
             }
         });
-
 
     }
 }
