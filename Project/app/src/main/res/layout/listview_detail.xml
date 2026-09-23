@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="#EBE5DF"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -23,5 +24,6 @@
         android:layout_marginStart="14dp"
         android:layout_marginTop="11dp"
         android:text="Priority"
-        android:textSize="14sp" />
+        android:textSize="14sp"
+        android:paddingBottom="2dp"/>
 </RelativeLayout>

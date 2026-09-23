@@ -52,4 +52,11 @@ public class HomePageActivity extends AppCompatActivity {
         taskListView.setAdapter(taskAdapter);
 
     }
+
+    //Task list get refreshed, when user returns to this activity
+    @Override
+    public void onRestart(){
+        super.onRestart();
+        taskAdapter.notifyDataSetChanged();
+    }
 }
