@@ -16,7 +16,7 @@ public class HomePageActivity extends AppCompatActivity {
     ImageButton addTaskImageButton;
     TextView welcomeTextView;
     ListView taskListView;
-
+    TaskAdapter taskAdapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,6 +47,9 @@ public class HomePageActivity extends AppCompatActivity {
             }
         });
 
+        //Pass this activity to Adapter, then sets view to the listview
+        taskAdapter = new TaskAdapter(this);
+        taskListView.setAdapter(taskAdapter);
 
     }
 }
