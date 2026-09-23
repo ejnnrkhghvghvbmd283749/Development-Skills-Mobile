@@ -3,6 +3,7 @@ package org.gpiste.myapp;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -50,6 +51,16 @@ public class HomePageActivity extends AppCompatActivity {
         //Pass this activity to Adapter, then sets view to the listview
         taskAdapter = new TaskAdapter(this);
         taskListView.setAdapter(taskAdapter);
+
+        //Send clicked items index
+        taskListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Intent intent = new Intent(HomePageActivity.this, taskDetailActivity.class);
+                intent.putExtra("org.gpiste.myapp.SOMETHING", i);
+                startActivity(intent);
+            }
+        });
 
     }
 
