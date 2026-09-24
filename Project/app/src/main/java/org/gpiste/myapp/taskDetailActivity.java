@@ -8,6 +8,7 @@ import android.widget.TextView;
 import android.content.Intent;
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 public class taskDetailActivity extends AppCompatActivity {
 
@@ -15,6 +16,8 @@ public class taskDetailActivity extends AppCompatActivity {
     TextView taskTextView;
     TextView noteTextView;
     Button doneButton;
+
+    Toolbar clickedTaskToolbar;
     int i;
 
     @Override
@@ -28,12 +31,16 @@ public class taskDetailActivity extends AppCompatActivity {
         taskTextView = findViewById(R.id.taskTextView);
         noteTextView = findViewById(R.id.noteTextView);
         doneButton = findViewById(R.id.doneButton);
+        clickedTaskToolbar = findViewById(R.id.clickedTaskToolbar);
 
         Intent intent = getIntent();
+
+        //Check if item index is received
         if(intent.hasExtra("org.gpiste.myapp.SOMETHING")){
             i = intent.getIntExtra("org.gpiste.myapp.SOMETHING", -1);
             String priorityLevel = Task.tasks.get(i).priority;
 
+            //Set priority box's color based on it level
             if (priorityLevel.equals("High")){
                 priorityTextView.setBackgroundColor(Color.RED);
             } else if ( priorityLevel.equals("Medium")) {
@@ -41,9 +48,29 @@ public class taskDetailActivity extends AppCompatActivity {
             } else if (priorityLevel.equals("Low")) {
                 priorityTextView.setBackgroundColor(Color.GREEN);
             }
+
+            //Sets selected item infomration to text boxes
             priorityTextView.setText(priorityLevel);
             taskTextView.setText(Task.tasks.get(i).taskName);
             noteTextView.setText(Task.tasks.get(i).note);
         }
+
+        //When navigation icon is clicked it goes back to previous activity
+        clickedTaskToolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
+
+        //Removes task when it is done and goes to previous activity
+        doneButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Task.tasks.remove(i);
+                Intent intent = new Intent(taskDetailActivity.this, HomePageActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 }
