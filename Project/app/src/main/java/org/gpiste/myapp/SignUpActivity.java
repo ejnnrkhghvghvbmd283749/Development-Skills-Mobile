@@ -15,6 +15,7 @@ public class SignUpActivity extends AppCompatActivity {
     TextView userNameText;
     TextView passwordText;
     Button signUpButton;
+    TextView errorTextView1, errorTextView2, errorTextView3, errorTextView4, errorTextView5;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +30,12 @@ public class SignUpActivity extends AppCompatActivity {
         userNameText = findViewById(R.id.userNameText);
         passwordText = findViewById(R.id.passwordText);
 
+        errorTextView1 = findViewById(R.id.errorTextView1);
+        errorTextView2 = findViewById(R.id.errorTextView2);
+        errorTextView3 = findViewById(R.id.errorTextView3);
+        errorTextView4 = findViewById(R.id.errorTextView4);
+        errorTextView5 = findViewById(R.id.errorTextView5);
+
         signUpButton = findViewById(R.id.signUpButton);
 
         //When button is clicked, user's data gets saved
@@ -41,15 +48,23 @@ public class SignUpActivity extends AppCompatActivity {
             String username = userNameText.getText().toString();
             String password = passwordText.getText().toString();
 
-            //Create an object out of inputs
-            User user = new User(name, lastname, username, password);
+            //Get email characters before @
+            String subEmail = email.substring(0, email.indexOf("@"));
 
-            //Put email as key and object as value into hashmap
-            User.users.put(email, user);
+            //Checks for input requirements to register as user
+            if(name.length() >= 3 && lastname.length() >= 3 && subEmail.length() >= 3 && username.length() >= 4 && password.length() >= 12){
 
-            //Proceed to main activity to login in
-            Intent intent = new Intent(SignUpActivity.this, MainActivity.class);
-            startActivity(intent);
+                //Create an object out of inputs
+                User user = new User(name, lastname, username, password);
+
+                //Put email as key and object as value into hashmap
+                User.users.put(email, user);
+
+                //Proceed to main activity to login in
+                Intent intent = new Intent(SignUpActivity.this, MainActivity.class);
+                startActivity(intent);
+
+            }
 
         });
 
