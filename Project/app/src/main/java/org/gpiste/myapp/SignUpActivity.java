@@ -48,8 +48,16 @@ public class SignUpActivity extends AppCompatActivity {
             String username = userNameText.getText().toString();
             String password = passwordText.getText().toString();
 
+            //Sets error boxes to empty before checking conditions
+            errorTextView1.setText("");
+            errorTextView2.setText("");
+            errorTextView3.setText("");
+            errorTextView4.setText("");
+            errorTextView5.setText("");
+
+
             //Checks for input requirements to register as user
-            if(name.length() >= 3 && lastname.length() >= 3 && email.contains("@") && email.contains(".") && username.length() >= 4 && password.length() >= 12) {
+            if(name.length() >= 3 && lastname.length() >= 3 && email.contains("@") && email.contains(".") && username.length() >= 4 && password.length() >= 12 && (password.contains("!") || password.contains("?") || password.contains("_"))) {
 
                     //Create an object out of inputs
                     User user = new User(name, lastname, username, password);
@@ -70,15 +78,21 @@ public class SignUpActivity extends AppCompatActivity {
                     errorTextView2.setText("Lastname must be at least 3 characters");
                 }
                 if(email.isEmpty()){
-                    errorTextView3.setText("Email must be at least 3 characters");
+                    errorTextView3.setText("Email must have at least 3 characters");
+
+                }else if(!email.contains("@") || !email.contains(".")){
+                    errorTextView3.setText("Email must have @.");
                 }
                 if(username.length() < 4){
                     errorTextView4.setText("Username must be at least 4 characters");
                 }
-                if(password.length() < 12){
-                    errorTextView5.setText("Password must be at least 12 characters");
+                if(password.length() < 12 && !password.contains("!") && !password.contains("?") && !password.contains("_")){
+                    errorTextView5.setText("Password must be at least 12 characters including !?_");
+                }else if(!password.contains("!") && !password.contains("?") && !password.contains("_")){
+                    errorTextView5.setText("Password must have one special characters !?_");
                 }
             }
+
 
         });
 
