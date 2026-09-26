@@ -48,31 +48,28 @@ public class SignUpActivity extends AppCompatActivity {
             String username = userNameText.getText().toString();
             String password = passwordText.getText().toString();
 
-            //Get email characters before @
-            String subEmail = email.substring(0, email.indexOf("@"));
-
             //Checks for input requirements to register as user
-            if(name.length() >= 3 && lastname.length() >= 3 && subEmail.length() >= 3 && username.length() >= 4 && password.length() >= 12){
+            if(name.length() >= 3 && lastname.length() >= 3 && email.contains("@") && email.contains(".") && username.length() >= 4 && password.length() >= 12) {
 
-                //Create an object out of inputs
-                User user = new User(name, lastname, username, password);
+                    //Create an object out of inputs
+                    User user = new User(name, lastname, username, password);
 
-                //Put email as key and object as value into hashmap
-                User.users.put(email, user);
+                    //Put email as key and object as value into hashmap
+                    User.users.put(email, user);
 
-                //Proceed to main activity to login in
-                Intent intent = new Intent(SignUpActivity.this, MainActivity.class);
-                startActivity(intent);
+                    //Proceed to main activity to login in
+                    Intent intent = new Intent(SignUpActivity.this, MainActivity.class);
+                    startActivity(intent);
 
-                //Check conditions in order to add errors
-            } else{
+            }//Check conditions in order to add errors
+            else{
                 if(name.length() < 3){
                     errorTextView1.setText("Name must be at least 3 characters");
                 }
                 if(lastname.length() < 3){
                     errorTextView2.setText("Lastname must be at least 3 characters");
                 }
-                if(subEmail.length() < 3){
+                if(email.isEmpty()){
                     errorTextView3.setText("Email must be at least 3 characters");
                 }
                 if(username.length() < 4){
