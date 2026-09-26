@@ -64,6 +64,23 @@ public class SignUpActivity extends AppCompatActivity {
                 Intent intent = new Intent(SignUpActivity.this, MainActivity.class);
                 startActivity(intent);
 
+                //Check conditions in order to add errors
+            } else{
+                if(name.length() < 3){
+                    errorTextView1.setText("Name must be at least 3 characters");
+                }
+                if(lastname.length() < 3){
+                    errorTextView2.setText("Lastname must be at least 3 characters");
+                }
+                if(subEmail.length() < 3){
+                    errorTextView3.setText("Email must be at least 3 characters");
+                }
+                if(username.length() < 4){
+                    errorTextView4.setText("Username must be at least 4 characters");
+                }
+                if(password.length() < 12){
+                    errorTextView5.setText("Password must be at least 12 characters");
+                }
             }
 
         });
