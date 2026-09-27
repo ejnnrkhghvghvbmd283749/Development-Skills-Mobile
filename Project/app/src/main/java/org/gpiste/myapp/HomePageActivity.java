@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 public class HomePageActivity extends AppCompatActivity {
 
@@ -18,6 +19,9 @@ public class HomePageActivity extends AppCompatActivity {
     TextView welcomeTextView;
     ListView taskListView;
     TaskAdapter taskAdapter;
+
+    Toolbar homePageToolbar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,6 +33,7 @@ public class HomePageActivity extends AppCompatActivity {
         addTaskImageButton = findViewById(R.id.addTaskImageButton);
         welcomeTextView = findViewById(R.id.welcomeTextView);
         taskListView = findViewById(R.id.taskListView);
+        homePageToolbar = findViewById(R.id.homePageToolbar);
 
         //Homepage receives user's email from the login page to find their username
         Intent intent = getIntent();
@@ -61,6 +66,16 @@ public class HomePageActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        //When icon is clicked, it goes to user account detail page
+        homePageToolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(HomePageActivity.this, userAccounActivity.class);
+                startActivity(intent);
+            }
+        });
+
 
     }
 
