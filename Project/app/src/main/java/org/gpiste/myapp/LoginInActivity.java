@@ -14,6 +14,7 @@ public class LoginInActivity extends AppCompatActivity {
     TextView loginEmailText;
     TextView passwordLoginText;
     Button loginButton;
+    TextView loginError1, loginError2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,12 +26,19 @@ public class LoginInActivity extends AppCompatActivity {
         loginEmailText = findViewById(R.id.loginEmailText);
         passwordLoginText = findViewById(R.id.passwordLoginText);
 
+        loginError1 = findViewById(R.id.errorTextView1);
+        loginError2 = findViewById(R.id.errorTextView2);
+
         loginButton = findViewById(R.id.loginButton);
 
         //When button is clicked it goes to new activity to create to do tasks
         loginButton.setOnClickListener(view -> {
 
-            ////Converting inputs to string
+            //Sets error boxes to empty before checking conditions
+            loginError1.setText("");
+            loginError2.setText("");
+
+            //Converting inputs to string
             String email = loginEmailText.getText().toString();
             String password = passwordLoginText.getText().toString();
 
@@ -40,11 +48,13 @@ public class LoginInActivity extends AppCompatActivity {
                 //Send email to homepage
                 intent.putExtra("org.gpiste.myapp.SOMETHING", email);
                 startActivity(intent);
+
             }else if(User.users.containsKey(email) && !User.users.get(email).password.equals(password)){
-                Toast.makeText(LoginInActivity.this, "Password is incorrect, try again",Toast.LENGTH_SHORT).show();
+                loginError1.setText("Password is incorrect, try again");
+
             }else {
-                Toast.makeText(LoginInActivity.this, "User does not exist",Toast.LENGTH_SHORT).show();
-            }
+                loginError2.setText("User does not exist");
+´            }
         });
 
 

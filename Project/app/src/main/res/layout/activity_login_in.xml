@@ -5,15 +5,16 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F8D6DF"
+    android:background="#FFFCF7"
     tools:context=".LoginInActivity">
 
     <TextView
         android:id="@+id/headerTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="72dp"
+        android:layout_marginTop="40dp"
         android:text="User Login"
+        android:textColor="#738290"
         android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -23,42 +24,85 @@
 
     <EditText
         android:id="@+id/loginEmailText"
-        android:layout_width="wrap_content"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="44dp"
-        android:background="#F7E8EA"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/signuptextview"
+        android:drawableLeft="@drawable/mail"
+        android:drawablePadding="2dp"
+        android:paddingStart="7dp"
+        android:paddingTop="3dp"
+        android:paddingEnd="5dp"
+        android:paddingBottom="3dp"
         android:ems="10"
         android:hint="Enter your Email"
         android:inputType="textEmailAddress"
+        android:textColorHint="#738290"
+        android:textColor="#738290"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/headerTextView" />
 
-    <EditText
-        android:id="@+id/passwordLoginText"
+    <TextView
+        android:id="@+id/loginError1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:background="#F7E8EA"
+        android:layout_marginTop="10dp"
+        android:textColor="#738290"
+        android:textSize="10sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/loginEmailText"
+        app:layout_constraintTop_toBottomOf="@+id/loginEmailText" />
+
+    <EditText
+        android:id="@+id/passwordLoginText"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/signuptextview"
+        android:drawableLeft="@drawable/lock"
+        android:drawablePadding="2dp"
         android:ems="10"
         android:hint="Enter your Password"
         android:inputType="textPassword"
+        android:paddingStart="7dp"
+        android:paddingTop="3dp"
+        android:paddingEnd="5dp"
+        android:paddingBottom="3dp"
+        android:textColor="#738290"
+        android:textColorHint="#738290"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/loginEmailText" />
+        app:layout_constraintTop_toBottomOf="@+id/loginError1" />
+
+    <TextView
+        android:id="@+id/loginError2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:textColor="#738290"
+        android:textSize="10sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/passwordLoginText"
+        app:layout_constraintTop_toBottomOf="@+id/passwordLoginText" />
 
     <Button
         android:id="@+id/loginButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:backgroundTint="#ED9CB4"
+        android:backgroundTint="#A1B5D8"
         android:text="Login"
+        android:textColor="#738290"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/passwordLoginText"
-        app:layout_constraintVertical_bias="0.18" />
+        app:layout_constraintTop_toBottomOf="@+id/loginError2"
+        app:layout_constraintVertical_bias="0.15" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
