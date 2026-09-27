@@ -5,16 +5,17 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F8D6DF"
+    android:background="#FFFCF7"
     tools:context=".ToDoTaskActivity">
 
     <TextView
         android:id="@+id/taskHeaderText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="20dp"
         android:text="Task:"
         android:textSize="25sp"
+        android:textColor="#738290"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.127"
         app:layout_constraintStart_toStartOf="parent"
@@ -22,14 +23,19 @@
 
     <EditText
         android:id="@+id/taskNameText"
-        android:layout_width="wrap_content"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/signuptextview"
         android:ems="10"
         android:inputType="text"
-        android:background="#F7E8EA"
+        android:maxLines="1"
+        android:paddingStart="7dp"
+        android:paddingTop="3dp"
+        android:paddingEnd="7dp"
+        android:paddingBottom="3dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.223"
+        app:layout_constraintHorizontal_bias="0.279"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/taskHeaderText" />
 
@@ -37,9 +43,10 @@
         android:id="@+id/priorityHeaderText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="25dp"
         android:text="Priority:"
         android:textSize="25sp"
+        android:textColor="#738290"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.138"
         app:layout_constraintStart_toStartOf="parent"
@@ -49,9 +56,10 @@
         android:id="@+id/noteHeaderText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="20dp"
         android:text="Note:"
         android:textSize="25sp"
+        android:textColor="#738290"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.128"
         app:layout_constraintStart_toStartOf="parent"
@@ -59,14 +67,19 @@
 
     <EditText
         android:id="@+id/noteText"
-        android:layout_width="wrap_content"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/signuptextview"
         android:ems="10"
+        android:paddingStart="7dp"
+        android:paddingTop="3dp"
+        android:paddingEnd="7dp"
+        android:paddingBottom="3dp"
         android:inputType="text"
-        android:background="#F7E8EA"
+        android:maxLines="2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.223"
+        app:layout_constraintHorizontal_bias="0.279"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/noteHeaderText" />
 
@@ -74,7 +87,7 @@
         android:id="@+id/radioGroup"
         android:layout_width="134dp"
         android:layout_height="145dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.162"
         app:layout_constraintStart_toStartOf="parent"
@@ -84,27 +97,31 @@
             android:id="@+id/hightRadioButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="High" />
+            android:text="High"
+            android:textColor="#738290"/>
 
         <RadioButton
             android:id="@+id/mediumRadioButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Medium" />
+            android:text="Medium"
+            android:textColor="#738290"/>
 
         <RadioButton
             android:id="@+id/lowRadioButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Low" />
+            android:text="Low"
+            android:textColor="#738290"/>
     </RadioGroup>
 
     <Button
         android:id="@+id/saveButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:backgroundTint="#ED9CB4FF"
+        android:backgroundTint="#A1B5D8"
         android:text="Save"
+        android:textColor="#738290"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -116,7 +133,7 @@
         android:id="@+id/taskPageToolbar"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="#E9A0B5"
+        android:background="#A1B5D8"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
         app:navigationIcon="@drawable/arrow_back"

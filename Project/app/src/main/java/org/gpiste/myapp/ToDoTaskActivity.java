@@ -6,6 +6,7 @@ import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -19,6 +20,8 @@ public class ToDoTaskActivity extends AppCompatActivity {
     Button saveButton;
     RadioButton radioButton;
     Toolbar taskPageToolbar;
+
+    String priority;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,17 +52,24 @@ public class ToDoTaskActivity extends AppCompatActivity {
 
                 //Get the selected radiobutton and its text by ID from radiogroup
                 int radioId = radioGroup.getCheckedRadioButtonId();
-                radioButton = findViewById(radioId);
-                String priority = radioButton.getText().toString();
+                if(radioId != -1){
+                    radioButton = findViewById(radioId);
+                    priority = radioButton.getText().toString();
+                }
 
                 //Get the task note
                 String note = noteText.getText().toString();
 
-                //Create task object
-                Task task = new Task(taskName, priority, note);
+                if(!note.isEmpty() && !taskName.isEmpty() && !priority.isEmpty()){
 
-                //Add task object to list
-                Task.tasks.add(task);
+                    //Create task object
+                    Task task = new Task(taskName, priority, note);
+
+                    //Add task object to list
+                    Task.tasks.add(task);
+                }else{
+                    Toast.makeText(ToDoTaskActivity.this, "Fill all boxes", Toast.LENGTH_LONG).show();
+                }
             }
         });
 

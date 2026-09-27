@@ -26,8 +26,8 @@ public class LoginInActivity extends AppCompatActivity {
         loginEmailText = findViewById(R.id.loginEmailText);
         passwordLoginText = findViewById(R.id.passwordLoginText);
 
-        loginError1 = findViewById(R.id.errorTextView1);
-        loginError2 = findViewById(R.id.errorTextView2);
+        loginError1 = findViewById(R.id.loginError1);
+        loginError2 = findViewById(R.id.loginError2);
 
         loginButton = findViewById(R.id.loginButton);
 
@@ -54,7 +54,7 @@ public class LoginInActivity extends AppCompatActivity {
 
             }else {
                 loginError2.setText("User does not exist");
-´            }
+            }
         });
 
 
