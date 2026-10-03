@@ -68,8 +68,7 @@ public class taskDetailActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Task.tasks.remove(i);
-                Intent intent = new Intent(taskDetailActivity.this, HomePageActivity.class);
-                startActivity(intent);
+                finish();
             }
         });
     }

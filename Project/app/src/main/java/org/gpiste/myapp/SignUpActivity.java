@@ -66,8 +66,7 @@ public class SignUpActivity extends AppCompatActivity {
                     User.users.put(email, user);
 
                     //Proceed to main activity to login in
-                    Intent intent = new Intent(SignUpActivity.this, MainActivity.class);
-                    startActivity(intent);
+                    finish();
 
             }//Check conditions in order to add errors
             else{

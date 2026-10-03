@@ -8,8 +8,7 @@ import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-
-import org.w3c.dom.Document;
+import androidx.appcompat.widget.Toolbar;
 
 public class userAccounActivity extends AppCompatActivity {
 
@@ -18,6 +17,7 @@ public class userAccounActivity extends AppCompatActivity {
     Button logOutButton;
     String receivedEmail,curfirstname, curlastname,curusername,curpassword;
     TextView nameError, lastNameError,usernameError,passwordError;
+    Toolbar userAccountToolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,11 +39,21 @@ public class userAccounActivity extends AppCompatActivity {
         usernameError = findViewById(R.id.usernameError);
         passwordError = findViewById(R.id.passwordError);
 
+        userAccountToolbar = findViewById(R.id.userAccountToolbar);
+
+        //When navigation icon is clicked it goes back to previous activity
+        userAccountToolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
         //Homepage receives user's email from home page
         Intent intent = getIntent();
         if(intent.hasExtra("org.gpiste.myapp.SOMETHING")){
             receivedEmail= intent.getExtras().getString("org.gpiste.myapp.SOMETHING");
             emailTextView.setText(receivedEmail);
+
             curfirstname = User.users.get(receivedEmail).firstname;
             firstNameTextView.setText(curfirstname);
             curlastname = User.users.get(receivedEmail).lastname;
@@ -100,6 +110,15 @@ public class userAccounActivity extends AppCompatActivity {
                     passwordError.setText("Password must have at least one special characters !?_");
                 }
 
+            }
+        });
+
+        //Redirect use to main page after logging out
+        logOutButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(userAccounActivity.this, MainActivity.class);
+                startActivity(intent);
             }
         });
 
