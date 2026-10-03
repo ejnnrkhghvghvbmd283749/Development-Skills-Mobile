@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -58,6 +59,9 @@ public class SignUpActivity extends AppCompatActivity {
 
             //Checks for input requirements to register as user
             if(name.length() >= 3 && lastname.length() >= 3 && email.contains("@") && email.contains(".") && username.length() >= 4 && password.length() >= 12 && (password.contains("!") || password.contains("?") || password.contains("_"))) {
+                if (User.users.containsKey(email)) {
+                    Toast.makeText(SignUpActivity.this, "Email already exist", Toast.LENGTH_LONG).show();
+                }else{
 
                     //Create an object out of inputs
                     User user = new User(name, lastname, username, password);
@@ -67,6 +71,7 @@ public class SignUpActivity extends AppCompatActivity {
 
                     //Proceed to main activity to login in
                     finish();
+                }
 
             }//Check conditions in order to add errors
             else{

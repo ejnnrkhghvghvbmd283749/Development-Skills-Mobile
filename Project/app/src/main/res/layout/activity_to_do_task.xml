@@ -95,7 +95,7 @@
         app:layout_constraintTop_toBottomOf="@+id/priorityHeaderText">
 
         <RadioButton
-            android:id="@+id/hightRadioButton"
+            android:id="@+id/highRadioButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="High"
