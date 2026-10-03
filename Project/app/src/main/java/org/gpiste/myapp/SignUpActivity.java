@@ -86,10 +86,10 @@ public class SignUpActivity extends AppCompatActivity {
                 if(username.length() < 4){
                     errorTextView4.setText("Username must be at least 4 characters");
                 }
-                if(password.length() < 12 && !password.contains("!") && !password.contains("?") && !password.contains("_")){
-                    errorTextView5.setText("Password must be at least 12 characters including !?_");
+                if(password.length() < 12){
+                    errorTextView5.setText("Password must be at least 12 characters");
                 }else if(!password.contains("!") && !password.contains("?") && !password.contains("_")){
-                    errorTextView5.setText("Password must have one special characters !?_");
+                    errorTextView5.setText("Password must have at least one special characters !?_");
                 }
             }
 
