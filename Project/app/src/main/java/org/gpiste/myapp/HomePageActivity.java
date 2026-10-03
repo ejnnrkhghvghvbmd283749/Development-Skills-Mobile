@@ -19,8 +19,7 @@ public class HomePageActivity extends AppCompatActivity {
     TextView welcomeTextView;
     ListView taskListView;
     TaskAdapter taskAdapter;
-
-    Toolbar homePageToolbar;
+    String email;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,12 +32,11 @@ public class HomePageActivity extends AppCompatActivity {
         addTaskImageButton = findViewById(R.id.addTaskImageButton);
         welcomeTextView = findViewById(R.id.welcomeTextView);
         taskListView = findViewById(R.id.taskListView);
-        homePageToolbar = findViewById(R.id.homePageToolbar);
 
         //Homepage receives user's email from the login page to find their username
         Intent intent = getIntent();
         if(intent.hasExtra("org.gpiste.myapp.SOMETHING")){
-            String email = intent.getExtras().getString("org.gpiste.myapp.SOMETHING");
+            email = intent.getExtras().getString("org.gpiste.myapp.SOMETHING");
             //Finds user's username
             String username = User.users.get(email).username;
             welcomeTextView.setText("Welcome " + username);
@@ -68,10 +66,11 @@ public class HomePageActivity extends AppCompatActivity {
         });
 
         //When icon is clicked, it goes to user account detail page
-        homePageToolbar.setNavigationOnClickListener(new View.OnClickListener() {
+        accountImageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(HomePageActivity.this, userAccounActivity.class);
+                intent.putExtra("org.gpiste.myapp.SOMETHING", email);
                 startActivity(intent);
             }
         });
