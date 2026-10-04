@@ -117,6 +117,7 @@ public class userAccounActivity extends AppCompatActivity {
         logOutButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Task.tasks.clear();
                 Intent intent = new Intent(userAccounActivity.this, MainActivity.class);
                 startActivity(intent);
             }
