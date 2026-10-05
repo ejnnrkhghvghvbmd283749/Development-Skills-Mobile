@@ -37,9 +37,6 @@ public class HomePageActivity extends AppCompatActivity {
         Intent intent = getIntent();
         if(intent.hasExtra("org.gpiste.myapp.SOMETHING")){
             email = intent.getExtras().getString("org.gpiste.myapp.SOMETHING");
-            //Finds user's username
-            String username = User.users.get(email).username;
-            welcomeTextView.setText("Welcome " + username);
         }
 
         //When addTaskImageButton is clicked, user get redirected to ToDoTaskActivity
@@ -83,5 +80,9 @@ public class HomePageActivity extends AppCompatActivity {
     public void onRestart(){
         super.onRestart();
         taskAdapter.notifyDataSetChanged();
+
+        //Finds user's username
+        String username = User.users.get(email).username;
+        welcomeTextView.setText("Welcome " + username);
     }
 }
