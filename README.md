@@ -18,7 +18,7 @@ tasks and edit user's information.
 1. Clone project repo
 
 ```bash
-git clone https://github.com/ejnnrkhghvghvbmd283749/Development-Skills-Mobile.git``
+git clone https://github.com/ejnnrkhghvghvbmd283749/Development-Skills-Mobile.git```
 
 2. Go to Android Studio and open the Project folder.
 
