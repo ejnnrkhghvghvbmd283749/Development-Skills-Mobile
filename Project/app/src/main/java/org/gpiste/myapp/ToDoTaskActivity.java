@@ -67,6 +67,7 @@ public class ToDoTaskActivity extends AppCompatActivity {
 
                     //Add task object to list
                     Task.tasks.add(task);
+                    Toast.makeText(ToDoTaskActivity.this, "Task saved succesfully!", Toast.LENGTH_LONG).show();
                 }else{
                     Toast.makeText(ToDoTaskActivity.this, "Fill all boxes", Toast.LENGTH_LONG).show();
                 }

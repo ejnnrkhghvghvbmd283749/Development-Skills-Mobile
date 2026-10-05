@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -108,6 +109,13 @@ public class userAccounActivity extends AppCompatActivity {
                     passwordError.setText("Password must be at least 12 characters");
                 } else if(!newPassword.contains("!") && !newPassword.contains("?") && !newPassword.contains("_")){
                     passwordError.setText("Password must have at least one special characters !?_");
+                }
+
+                if(newFirstName.equals(curfirstname) && newLastName.equals(curlastname) && newPassword.equals(curpassword
+                ) && newUsername.equals(curusername)){
+                    Toast.makeText(userAccounActivity.this, "No changes were made", Toast.LENGTH_LONG).show();
+                }else{
+                    Toast.makeText(userAccounActivity.this, "Changes saved successfully", Toast.LENGTH_LONG).show();
                 }
 
             }
