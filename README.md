@@ -2,9 +2,9 @@
 
 ## Description
 
-Project developer is Elnaz Imani. Project is done by JAVA in Android Studio App. It is a
-simple app that includes main functions such as creating an account logging in, creating 
-tasks and edit user's information.
+The project developer is Elnaz Imani. The project was done in Java using Android Studio. It is a
+simple ToDo task app that includes main functions such as creating an account, logging in, creating 
+tasks and editing user's information.
 
 ## Requirements
 
