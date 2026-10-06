@@ -36,6 +36,7 @@ public class ToDoTaskActivity extends AppCompatActivity {
         saveButton = findViewById(R.id.saveButton);
         taskPageToolbar = findViewById(R.id.taskPageToolbar);
 
+        //https://developer.android.com/reference/android/widget/Toolbar#setNavigationOnClickListener(android.view.View.OnClickListener)
         //When navigation icon is clicked it goes back to previous activity
         taskPageToolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
@@ -50,6 +51,7 @@ public class ToDoTaskActivity extends AppCompatActivity {
                 //Get task name
                 String taskName = taskNameText.getText().toString();
 
+                //https://stackoverflow.com/questions/18179124/android-getting-value-from-selected-radiobutton
                 //Get the selected radiobutton and its text by ID from radiogroup
                 int radioId = radioGroup.getCheckedRadioButtonId();
                 if(radioId != -1){

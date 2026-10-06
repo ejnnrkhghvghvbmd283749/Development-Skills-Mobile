@@ -130,6 +130,8 @@
         app:layout_constraintTop_toBottomOf="@+id/noteText"
         app:layout_constraintVertical_bias="0.291" />
 
+    <!-- https://abhiandroid.com/materialdesign/toolbar#gsc.tab=0-->
+    <!-- https://stackoverflow.com/questions/28700593/how-to-import-set-of-icons-into-android-studio-project?utm_source=chatgpt.com-->
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/taskPageToolbar"
         android:layout_width="0dp"

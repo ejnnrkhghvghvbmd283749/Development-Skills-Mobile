@@ -75,6 +75,7 @@ public class HomePageActivity extends AppCompatActivity {
 
     }
 
+    //https://stackoverflow.com/questions/3053761/reload-activity-in-android
     //Task list get refreshed, when user returns to this activity
     @Override
     public void onRestart(){

@@ -8,6 +8,8 @@
     android:background="#FFFCF7"
     tools:context=".SignUpActivity">
 
+    <!-- Color palette: https://coolors.co/palette/738290-a1b5d8-fffcf7-e4f0d0-c2d8b9-->
+    <!--https://stackoverflow.com/questions/4281749/how-to-add-icon-inside-edittext-view-in-android-->
     <EditText
         android:id="@+id/fistNameText"
         android:layout_width="250dp"
